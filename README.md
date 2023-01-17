@@ -1,6 +1,13 @@
 # React Masterclass
 
-Learn and dominate the React ecosystem once and for all.
+Learn and dominate the React ecosystem once and for all. (nomadcoders)
+
+### Project
+
+- Crypto tracker
+- Trello clone
+- Nomflix clone
+- Gatsby 101
 
 ### Using:
 
