@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet";
 import { useQuery } from "react-query";
 import {
   Switch,
@@ -140,7 +141,11 @@ interface PriceData {
   };
 }
 
-function Coin() {
+interface ICoinProps {
+  isDark: boolean;
+}
+
+function Coin({ isDark }: ICoinProps) {
   const { coinId } = useParams<RouteParams>();
   const { state } = useLocation<RouteState>();
   const priceMatch = useRouteMatch("/:coinId/price");
@@ -156,6 +161,11 @@ function Coin() {
   const loading = infoLoading || tickersLoading;
   return (
     <Container>
+      <Helmet>
+        <title>
+          {state?.name ? state.name : loading ? "Loading..." : infoData?.name}
+        </title>
+      </Helmet>
       <Header>
         <Title>
           {state?.name ? state.name : loading ? "Loading..." : infoData?.name}
@@ -203,16 +213,16 @@ function Coin() {
           <Switch>
             <Route path={`/:coinId/price`}>
             <Price
-                  percent30m={tickersData?.quotes.USD.percent_change_30m}
-                  percent1h={tickersData?.quotes.USD.percent_change_1h}
-                  percent12h={tickersData?.quotes.USD.percent_change_12h}
-                  percent7d={tickersData?.quotes.USD.percent_change_7d}
-                  percent30d={tickersData?.quotes.USD.percent_change_30d}
-                  percent1y={tickersData?.quotes.USD.percent_change_1y}
+                  percent30m={tickersData?.quotes?.USD?.percent_change_30m}
+                  percent1h={tickersData?.quotes?.USD?.percent_change_1h}
+                  percent12h={tickersData?.quotes?.USD?.percent_change_12h}
+                  percent7d={tickersData?.quotes?.USD?.percent_change_7d}
+                  percent30d={tickersData?.quotes?.USD?.percent_change_30d}
+                  percent1y={tickersData?.quotes?.USD?.percent_change_1y}
                 />
             </Route>
             <Route path={`/:coinId/chart`}>
-            <Chart coinId={coinId} />
+              <Chart isDark={isDark} coinId={coinId} />
             </Route>
           </Switch>
         </>
