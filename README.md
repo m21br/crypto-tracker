@@ -1,6 +1,6 @@
 # React Masterclass
 
-Learn and dominate the React ecosystem once and for all. (nomadcoders)
+Learn and dominate the React ecosystem once and for all.
 
 ### Project
 
