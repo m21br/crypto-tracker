@@ -1,13 +1,6 @@
-# React Masterclass
-
-Learn and dominate the React ecosystem once and for all.
-
 ### Project
 
 - Crypto tracker
-- Trello clone
-- Nomflix clone
-- Gatsby 101
 
 ### Using:
 
@@ -16,6 +9,4 @@ Learn and dominate the React ecosystem once and for all.
 - React Query
 - React Router DOM
 - Apex Charts
-- React Spring
 - Typescript
-- Firebase
